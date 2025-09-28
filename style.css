@@ -1277,6 +1277,65 @@ body {
   }
 
   /* Aapke hisab se aur bhi adjust kar sakte hain */
+    /* Mobile tap-friendly modal/letter */
+@media (max-width: 600px) {
+  .boxMail {
+    padding: 12px;
+  }
+  .boxMail .boxMail-container{
+    width: 100vw;
+    height: 85vh;
+    transform: none;
+    perspective: 800px;
+  }
+  /* Disable hover-driven transforms on mobile so taps work */
+  .boxMail .boxMail-container:hover,
+  .boxMail .boxMail-container .card1:hover,
+  .boxMail .boxMail-container .card2:hover {
+    transform: none !important;
+    filter: none !important;
+  }
+  .boxMail .boxMail-container .card1,
+  .boxMail .boxMail-container .card2{
+    width: 50%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) !important;
+  }
+  .boxMail .boxMail-container .card2 .card2-content{
+    max-width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    transform: none !important; /* removes hover translate pushing out of view */
+  }
+  /* Text scale so content fits */
+  .boxMail .boxMail-container .card1 h3 { font-size: 24px; letter-spacing: 2px; }
+  .boxMail .boxMail-container .card2 h3 { font-size: 18px; padding: 12px 0 6px 18px; opacity: 1; }
+  .boxMail .boxMail-container .card2 h2 { font-size: 15px; padding: 0 10px; opacity: 1; }
+
+  /* Ensure close button stays tappable above everything */
+  .boxMail .fa-xmark{
+    z-index: 9999;
+    pointer-events: auto;
+  }
+}
+
+/* Fallback for the other modal structure if used */
+@media (max-width: 600px) {
+  .box__letter .letter__border{
+    width: 92vw; height: 80vh; padding: 10px;
+  }
+  .letter__border .letter{ height: 100%; }
+  .letter__border .letter .content__letter{
+    height: calc(100% - 56px);
+    padding: 8px 8px 12px;
+  }
+  .content__letter .right .text__letter{
+    font-size: 1rem; margin-top: 6px; padding: 8px 10px;
+  }
+} 
+
 
 
 
