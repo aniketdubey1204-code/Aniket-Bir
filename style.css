@@ -1278,5 +1278,75 @@ body {
 
   /* Aapke hisab se aur bhi adjust kar sakte hain */
 }
+/* Mobile portrait: fix letter size and fit to screen */
+@media only screen and (max-width: 600px) {
+  .boxMail { padding: 12px; }
+
+  .boxMail .boxMail-container{
+    width: 100vw;
+    height: 80vh;
+    transform: none;           /* remove initial scale/tilt on small screens */
+    perspective: 1200px;
+  }
+
+  /* Left and right cards fit container */
+  .boxMail .boxMail-container .card1,
+  .boxMail .boxMail-container .card2{
+    width: 50%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); /* center properly */
+  }
+
+  /* Inner pink content should never exceed viewport */
+  .boxMail .boxMail-container .card2 .card2-content{
+    max-width: 100%;
+    max-height: 100%;
+    overflow-y: auto;          /* scroll if content is long */
+    transform: none;           /* disable hover translate on mobile */
+  }
+
+  /* Disable hover driven animations that push layout out of view */
+  .boxMail .boxMail-container:hover{
+    transform: none;
+    filter: none;
+  }
+  .boxMail .boxMail-container:hover .card1{
+    transform: translate(-50%, -50%) rotateY(0deg);
+  }
+  .boxMail .boxMail-container .card2:hover h3,
+  .boxMail .boxMail-container .card2:hover h2{
+    animation: none;
+    opacity: 1;
+  }
+
+  /* Typography scale down for small screens */
+  .boxMail .boxMail-container .card1 h3{ font-size: 26px; letter-spacing: 2px; }
+  .boxMail .boxMail-container .card2 h3{ font-size: 20px; padding: 16px 0 8px 24px; }
+  .boxMail .boxMail-container .card2 h2{ font-size: 16px; padding: 0 12px; }
+
+  /* Letter modal (older structure) safe bounds */
+  .box__letter .letter__border{
+    width: 92vw;
+    height: 75vh;
+    padding: 12px;
+  }
+  .letter__border .letter{
+    height: 100%;
+  }
+  .letter__border .letter .content__letter{
+    height: calc(100% - 56px); /* keep title area */
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+  .content__letter .right .text__letter{
+    margin-top: 8px;
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+}
+
+
 
 
