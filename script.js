@@ -210,3 +210,23 @@ document.querySelector('.letter__border .close').addEventListener('click', () =>
   document.querySelector('.box__letter').style.display = 'none';
 });
 
+
+// Disable hover effects logic on touch devices (optional guard)
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+if (isTouch) {
+  document.body.classList.add('touch-device');
+}
+
+// Ensure close works
+const closeBtn = document.querySelector('.fa-xmark, .letter__border .close');
+const modal   = document.querySelector('.boxMail') || document.querySelector('.box__letter');
+if (closeBtn && modal) {
+  closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
+}
+
+// Prevent invisible overlay blocking taps
+const overlays = document.querySelectorAll('.boxMail, .box__letter');
+overlays.forEach(el => {
+  el.style.pointerEvents = 'auto';
+});
+
