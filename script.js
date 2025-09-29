@@ -231,11 +231,11 @@ overlays.forEach(el => {
 });
 
 document.getElementById('notify-btn').addEventListener('click', function() {
-  fetch("https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage", {
+  fetch("https://api.telegram.org/bot7845579424:AAGfKJurZIzuLCwlS98HyYT0ySOQXRgmNxY/sendMessage", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      chat_id: "<YOUR_CHAT_ID>",
+      chat_id: "6239074712",
       text: "🎉 Bestie ne button dabaya! 🎉"
     })
   })
@@ -248,6 +248,8 @@ document.getElementById('notify-btn').addEventListener('click', function() {
   })
   .catch(error => alert('Error: ' + error.message));
 });
+</script>
+
 
 
 
