@@ -73,10 +73,31 @@
                     </div>
                     <div class="btn">
             <div class="btn">
-                <button id="notify-btn" class="theme-btn" type="button">
-                    Click to get a gift in 30 mins at your home 🎁
-                </button>
-            </div>
+               <button id="notify-btn" class="theme-btn" type="button">
+  Click to get a gift in 30 mins at your home 🎁
+</button>
+
+<script>
+document.getElementById('notify-btn').addEventListener('click', function() {
+  fetch("https://api.telegram.org/bot7845579424:AAGfKJurZIzuLCwlS98HyYT0ySOQXRgmNxY/sendMessage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: "6239074712",
+      text: "🎉 Bestie ne button dabaya! 🎉"
+    })
+  })
+  .then(response => {
+    if(response.ok) {
+      alert('Notification bheja gaya!');
+    } else {
+      alert('Notification nahi bheja ja saka.');
+    }
+  })
+  .catch(error => alert('Error: ' + error.message));
+});
+</script>
+
 
 
      
@@ -390,6 +411,7 @@ document.getElementById('noty-btn').onclick = function() {
   .catch(err => alert('Error: ' + err.message));
 };
 </script>
+
 
 
 
