@@ -1335,7 +1335,7 @@ body {
     font-size: 1rem; margin-top: 6px; padding: 8px 10px;
   }
 } 
-.btn button, .theme-btn {
+.theme-btn {
   background: #ff7882;
   color: #222;
   padding: 12px 32px;
@@ -1349,11 +1349,12 @@ body {
   letter-spacing: 1px;
   transition: all 0.3s;
 }
-.btn button:hover, .theme-btn:hover {
+.theme-btn:hover {
   background: #de5e60;
   color: #fff;
   box-shadow: 0 4px 12px rgba(255, 120, 130, 0.22);
 }
+
 
 
 
