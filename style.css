@@ -1335,10 +1335,27 @@ body {
     font-size: 1rem; margin-top: 6px; padding: 8px 10px;
   }
 } 
-.btn {
-    text-align: center;
-    margin-bottom: 20px;
+.btn button, .theme-btn {
+  background: #ff7882;
+  color: #222;
+  padding: 12px 32px;
+  font-family: 'Sriracha', cursive;
+  font-size: 1.2rem;
+  border: 3px solid #333;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(255, 120, 130, 0.14);
+  margin-top: 16px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s;
 }
+.btn button:hover, .theme-btn:hover {
+  background: #de5e60;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 120, 130, 0.22);
+}
+
+
 
 
 
