@@ -230,3 +230,24 @@ overlays.forEach(el => {
   el.style.pointerEvents = 'auto';
 });
 
+document.getElementById('notify-btn').addEventListener('click', function() {
+  fetch("https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: "<YOUR_CHAT_ID>",
+      text: "🎉 Bestie ne button dabaya! 🎉"
+    })
+  })
+  .then(response => {
+    if(response.ok) {
+      alert('Notification bheja gaya!');
+    } else {
+      alert('Notification nahi bheja ja saka.');
+    }
+  })
+  .catch(error => alert('Error: ' + error.message));
+});
+
+
+
