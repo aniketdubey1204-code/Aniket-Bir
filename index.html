@@ -369,23 +369,6 @@ Happiesttt Birthday my twin besties 🎂✨ Tum dono hamesha ek dusre ka support
   </script>
 </body>
 </html>
-<button id="noty-btn">Notify Me!</button>
-<script>
-document.getElementById('noty-btn').onclick = function() {
-  fetch("https://api.telegram.org/bot7845579424:AAGfKJurZIzuLCwlS98HyYT0ySOQXRgmNxY
-/sendMessage", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: "6239074712",
-      text: "🎉 Bestie ne button dabaya! 🎉"
-    })
-  })
-  .then(res => alert('Notification bheja gaya!'))
-  .catch(err => alert('Error: ' + err.message));
-};
-</script>
-
 <script>
 document.getElementById('notify-btn').addEventListener('click', function() {
   fetch("https://api.telegram.org/bot7845579424:AAGfKJurZIzuLCwlS98HyYT0ySOQXRgmNxY/sendMessage", {
@@ -406,6 +389,7 @@ document.getElementById('notify-btn').addEventListener('click', function() {
   .catch(error => alert('Error: ' + error.message));
 });
 </script>
+
 
 
 
