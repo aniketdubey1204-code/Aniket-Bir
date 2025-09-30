@@ -35,9 +35,6 @@ body {
     overflow: hidden;
     z-index: 1;
 }
-
-
-
 .flag__birthday{
     display: flex;
     justify-content: space-between;
@@ -55,11 +52,12 @@ body {
 .flag__birthday .flag__right{
     transform: rotate(10deg) translate(20px,30px) scaleX(-1);
 }
-.content {
-    overflow-y: auto;
-    max-height: 100vh; /* ya required height */
+.content{
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding-top: 3rem;
 }
-
 .content .left, .content .right{
     position: relative;
     display: flex;
@@ -226,9 +224,9 @@ body {
     }
 }
 .name{
-    position: relative;
+    position: absolute;
     padding: 0px 20px;
-    bottom: 20px;
+    bottom: -20px;
     border: 3px solid var(--color-black);
     font-family: 'Dancing Script', cursive;
 }
@@ -1279,94 +1277,33 @@ body {
   }
 
   /* Aapke hisab se aur bhi adjust kar sakte hain */
-    /* Mobile tap-friendly modal/letter */
-@media (max-width: 600px) {
-  .boxMail {
-    padding: 12px;
-  }
-  .boxMail .boxMail-container{
-    width: 100vw;
-    height: 85vh;
-    transform: none;
-    perspective: 800px;
-  }
-  /* Disable hover-driven transforms on mobile so taps work */
-  .boxMail .boxMail-container:hover,
-  .boxMail .boxMail-container .card1:hover,
-  .boxMail .boxMail-container .card2:hover {
-    transform: none !important;
-    filter: none !important;
-  }
-  .boxMail .boxMail-container .card1,
-  .boxMail .boxMail-container .card2{
-    width: 50%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) !important;
-  }
-  .boxMail .boxMail-container .card2 .card2-content{
-    max-width: 100%;
-    max-height: 100%;
-    overflow-y: auto;
-    transform: none !important; /* removes hover translate pushing out of view */
-  }
-  /* Text scale so content fits */
-  .boxMail .boxMail-container .card1 h3 { font-size: 24px; letter-spacing: 2px; }
-  .boxMail .boxMail-container .card2 h3 { font-size: 18px; padding: 12px 0 6px 18px; opacity: 1; }
-  .boxMail .boxMail-container .card2 h2 { font-size: 15px; padding: 0 10px; opacity: 1; }
-
-  /* Ensure close button stays tappable above everything */
-  .boxMail .fa-xmark{
-    z-index: 9999;
-    pointer-events: auto;
-  }
+}
+.btn {
+  display: flex;
+  justify-content: center; /* center button horizontally */
+  margin: 40px 0; /* upar nich gap */
 }
 
-/* Fallback for the other modal structure if used */
-@media (max-width: 600px) {
-  .box__letter .letter__border{
-    width: 92vw; height: 80vh; padding: 10px;
-  }
-  .letter__border .letter{ height: 100%; }
-  .letter__border .letter .content__letter{
-    height: calc(100% - 56px);
-    padding: 8px 8px 12px;
-  }
-  .content__letter .right .text__letter{
-    font-size: 1rem; margin-top: 6px; padding: 8px 10px;
-  }
-} 
 .theme-btn {
-  background: #ff7882;
-  color: #222;
-  padding: 12px 32px;
-  font-family: 'Sriracha', cursive;
+  padding: 10px 20px;
   font-size: 1.2rem;
-  border: 3px solid #333;
+  background-color: var(--color-text-pink);
+  border: 3px solid var(--color-black);
   border-radius: 50px;
-  box-shadow: 0 2px 8px rgba(255, 120, 130, 0.14);
-  margin-top: 16px;
+  font-family: 'Sriracha', cursive;
   cursor: pointer;
-  letter-spacing: 1px;
-  transition: all 0.3s;
+  transition: all 0.5s ease-in-out;
 }
+
 .theme-btn:hover {
-  background: #de5e60;
+  background-color: var(--color-heart);
+  border-color: var(--color-heart);
   color: #fff;
-  box-shadow: 0 4px 12px rgba(255, 120, 130, 0.22);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.24);
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.theme-btn:active {
+  transform: scale(0.7);
+}
 
 
